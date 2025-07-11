@@ -1,6 +1,6 @@
 # boilerplate-next
 
-A boilerplate for [Next.js](https://nextjs.org/)
+A boilerplate for [Next.js](https://nextjs.org/) following the best practices and using the latest technologies.
 
 ## Getting Started
 
@@ -10,9 +10,6 @@ First, run the development server:
 pnpm install
 
 pnpm dev
-
-# before commiting
-npx simple-git-hooks
 ```
 
 > If you want to use this boilerplate as a base for your project, you should also follow the steps in the [GETTING_STARTED.md](./GETTING_STARTED.md).
