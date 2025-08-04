@@ -1,4 +1,4 @@
-# boilerplate-next
+# Ship it
 
 A boilerplate with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [TypeScript](https://www.typescriptlang.org/) following the best practices and using the latest technologies.
 
