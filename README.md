@@ -1,6 +1,16 @@
 # boilerplate-next
 
-A boilerplate for [Next.js](https://nextjs.org/) following the best practices and using the latest technologies.
+A boilerplate with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [TypeScript](https://www.typescriptlang.org/) following the best practices and using the latest technologies.
+
+## Use as a Base for Your Project
+
+```bash
+git clone <your-repository-url>
+git remote add boilerplate git@github.com:interaction-dynamics/boilerplate-next.git
+git pull boilerplate master --rebase
+```
+
+> You can also follow the steps in the [GETTING_STARTED.md](./GETTING_STARTED.md) for more customization.
 
 ## Getting Started
 
@@ -11,8 +21,6 @@ pnpm install
 
 pnpm dev
 ```
-
-> If you want to use this boilerplate as a base for your project, you should also follow the steps in the [GETTING_STARTED.md](./GETTING_STARTED.md).
 
 ## License
 
@@ -50,8 +58,5 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Clerk
 - Custom Error pages
 - Localized date and time formatting
-
-### Features
-
 - Dark mode toggle
 - Language selector
