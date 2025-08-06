@@ -6,7 +6,7 @@ A boilerplate with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwi
 
 ```bash
 git clone <your-repository-url>
-git remote add boilerplate git@github.com:interaction-dynamics/boilerplate-next.git
+git remote add boilerplate git@github.com:interaction-dynamics/ship-it.git
 git pull boilerplate master --rebase
 ```
 
