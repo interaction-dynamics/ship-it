@@ -40,12 +40,12 @@ function Card({
             titleClassName
           )}
         >
-          <span className="text-white font-bold text-lg">{icon}</span>
+          <span className="text-foreground font-bold text-lg">{icon}</span>
         </div>
-        <h3 className="text-lg font-semibold text-white mb-2">
+        <h3 className="text-lg font-semibold text-foreground mb-2">
           {title} {version ? `v${simplifyLibraryVersion(version)}` : ''}
         </h3>
-        <p className="text-sm text-zinc-400">{description}</p>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </div>
     </div>
   )

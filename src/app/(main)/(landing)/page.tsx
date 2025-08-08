@@ -2,6 +2,7 @@
 import { Hero } from './_components/hero'
 import { Features } from './_components/features'
 import { Differentiators } from './_components/differentiators'
+import { Pricing } from './_components/pricing'
 
 export default async function Index() {
   return (
@@ -9,6 +10,7 @@ export default async function Index() {
       <Hero />
       <Features />
       <Differentiators />
+      <Pricing />
       {/* <main className="flex-1 flex flex-col items-center justify-between p-24">
         <h1>{t('Index.title')}</h1>
         <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">

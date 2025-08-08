@@ -57,7 +57,7 @@ export function Hero() {
             </span>
           </div> */}
 
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-white leading-tight">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-foreground leading-tight">
             Ship Your Next.js
             <br /> App <Cover>in Minutes</Cover>
           </h1>
