@@ -1,4 +1,5 @@
-import { companyName, siteMap, socials } from '@/lib/constants'
+import { getCompanyName } from '@/config/business'
+import { siteMap, socials } from '@/lib/constants'
 import { getCurrentYear } from '@/lib/current-date'
 import { getSocialIcon } from '@/lib/get-social-icon'
 import { getTranslations } from '@/services/translation'
@@ -49,7 +50,7 @@ export async function Footer() {
             ))}
         </div>
         <p className="mt-10 text-center text-sm/6 text-muted-foreground">
-          &copy; {getCurrentYear()} {companyName}. All rights reserved.
+          &copy; {getCurrentYear()} {getCompanyName()} All rights reserved.
         </p>
       </div>
     </footer>

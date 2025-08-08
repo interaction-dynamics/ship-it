@@ -6,6 +6,14 @@ export const translationConfig: Config = {
     { label: 'Français', locale: 'fr' },
   ],
   defaultLocale: 'en',
-  namespaces: ['common', 'dashboard', 'pricing', 'email', 'footer', 'faq'],
+  namespaces: [
+    'common',
+    'dashboard',
+    'pricing',
+    'email',
+    'footer',
+    'faq',
+    'landing',
+  ],
   defaultNamespace: 'common',
 }

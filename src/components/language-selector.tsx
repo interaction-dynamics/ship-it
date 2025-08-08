@@ -16,17 +16,26 @@ export interface LanguageSwitcherProps {
 
 export const languageSwitcherTestId = 'language-switcher'
 
-export function LanguageSelector() {
+export type LanguageSelectorProps = {
+  className?: string
+  children?: React.ReactNode
+}
+
+const defaultButton = (
+  <Button variant="outline" size="icon">
+    <Globe className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+    <span className="sr-only">Change language</span>
+  </Button>
+)
+
+export function LanguageSelector({
+  children = defaultButton,
+}: LanguageSelectorProps) {
   const { locale, changeLocale, languages } = useTranslations()
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Globe className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-          <span className="sr-only">Change language</span>
-        </Button>
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {languages.map((language) => (
           <DropdownMenuCheckboxItem

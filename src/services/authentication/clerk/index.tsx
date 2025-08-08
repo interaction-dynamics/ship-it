@@ -3,16 +3,12 @@ import {
   ClerkProvider,
   SignInButton as ClerkSignInButton,
   SignUpButton as ClerkSignUpButton,
+  UserButton as ClerkUserButton,
 } from '@clerk/nextjs'
 import { Button, type ButtonProps } from '@/components/ui/button'
 import { protectedRoutes } from '@/app/(main)/(protected)/protected-routes'
 
-export {
-  SignedIn,
-  SignedOut,
-  UserButton,
-  RedirectToSignIn,
-} from '@clerk/nextjs'
+export { SignedIn, SignedOut, RedirectToSignIn } from '@clerk/nextjs'
 
 const isProtectedRoute = createRouteMatcher(protectedRoutes)
 
@@ -51,4 +47,8 @@ export function SignUpButton({
       <Button {...props}>Sign Up</Button>
     </ClerkSignUpButton>
   )
+}
+
+export function UserButton() {
+  return <ClerkUserButton />
 }
