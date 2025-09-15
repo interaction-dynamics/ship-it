@@ -5,7 +5,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/interaction-dynamics/ship-it"
+    "url": "https://github.com/interaction-dynamics/boilerplate-next"
   },
   "details": {
     "company": "Your Company Name, Inc."

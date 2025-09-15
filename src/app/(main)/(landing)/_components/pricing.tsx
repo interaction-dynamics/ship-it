@@ -1,40 +1,53 @@
+'use client'
 import { Button } from '@/components/ui/button'
+import { getRepositoryUrl } from '@/config/repository'
 import { cn } from '@/lib/utils'
 import { CheckIcon } from 'lucide-react'
-
-const tiers = [
-  {
-    name: 'Hobby',
-    id: 'tier-hobby',
-    href: '#',
-    priceMonthly: 'Free',
-    description: "The perfect plan if you're have a small project.",
-    features: [
-      'Mailgun integration',
-      'Analytics integration',
-      'Authentication integration',
-      'Github support',
-    ],
-    featured: false,
-  },
-  {
-    name: 'Enterprise',
-    id: 'tier-enterprise',
-    href: '#',
-    priceMonthly: '$99',
-    description: 'The best plan for large businesses with advanced needs.',
-    features: [
-      'Database integration',
-      'Stripe integration',
-      'All the new updates forever',
-      'Integrations switch',
-      'Priority support',
-    ],
-    featured: true,
-  },
-]
+import { useRouter } from 'next/navigation'
 
 export function Pricing() {
+  const { push } = useRouter()
+
+  const tiers = [
+    {
+      name: 'Hobby',
+      id: 'tier-hobby',
+      href: '#',
+      priceMonthly: 'Free',
+      description: "The perfect plan if you're have a small project.",
+      features: [
+        'Mailgun integration',
+        'Analytics integration',
+        'Authentication integration',
+        'Github support',
+      ],
+      featured: false,
+      onClick: () => {
+        push(getRepositoryUrl())
+      },
+    },
+    {
+      name: 'Pro',
+      id: 'tier-pro',
+      href: '#',
+      priceMonthly: '$99',
+      description: 'The best plan for large businesses with advanced needs.',
+      features: [
+        'Database integration',
+        'Stripe integration',
+        'All the new updates forever',
+        'Integrations switch',
+        'Priority support',
+      ],
+      featured: true,
+      onClick: () => {
+        push(
+          'mailto:ship-it@interaction-dynamics.io?subject=requesting pro version'
+        )
+      },
+    },
+  ]
+
   return (
     <section className="relative isolate px-6 py-24 sm:py-32 lg:px-8">
       <div
@@ -138,6 +151,7 @@ export function Pricing() {
             <Button
               variant={tier.featured ? 'secondary' : 'outline'}
               className="mt-8 w-full"
+              onClick={tier.onClick}
             >
               Get started today
             </Button>
