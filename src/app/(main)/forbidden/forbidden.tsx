@@ -1,7 +1,7 @@
 'use client'
-import { Button } from '@/components/ui/button'
+import { ArrowLeft, Shield } from 'lucide-react'
 import { ErrorLayout } from '@/components/error-layout'
-import { Shield, ArrowLeft } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export default function ForbiddenError() {
   return (

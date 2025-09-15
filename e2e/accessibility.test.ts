@@ -1,5 +1,5 @@
 import { test } from '@playwright/test'
-import { injectAxe, checkA11y } from 'axe-playwright'
+import { checkA11y, injectAxe } from 'axe-playwright'
 
 test('should not have accessibility violations', async ({ page }) => {
   // Start from the index page (the baseURL is set via the webServer in the playwright.config.ts)

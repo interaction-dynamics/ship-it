@@ -1,14 +1,14 @@
+import { VercelToolbar } from '@vercel/toolbar/next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
-import { VercelToolbar } from '@vercel/toolbar/next'
 
 import './globals.css'
 import type { Metadata } from 'next'
-import { dir, getLocale, TranslationProvider } from '@/services/translation'
-import { AnalyticsScript } from '@/services/analytics'
-import { ABTestingProvider } from '@/services/ab-testing'
-import { AuthenticationProvider } from '@/services/authentication'
 import { description, productName } from '@/lib/constants'
+import { ABTestingProvider } from '@/services/ab-testing'
+import { AnalyticsScript } from '@/services/analytics'
+import { AuthenticationProvider } from '@/services/authentication'
+import { dir, getLocale, TranslationProvider } from '@/services/translation'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

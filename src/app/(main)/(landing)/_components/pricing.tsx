@@ -1,9 +1,9 @@
 'use client'
+import { CheckIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { getRepositoryUrl } from '@/config/repository'
 import { cn } from '@/lib/utils'
-import { CheckIcon } from 'lucide-react'
-import { useRouter } from 'next/navigation'
 
 export function Pricing() {
   const { push } = useRouter()
@@ -42,7 +42,7 @@ export function Pricing() {
       featured: true,
       onClick: () => {
         push(
-          'mailto:ship-it@interaction-dynamics.io?subject=requesting pro version'
+          'mailto:ship-it@interaction-dynamics.io?subject=requesting pro version',
         )
       },
     },
@@ -84,14 +84,14 @@ export function Pricing() {
                 : tierIdx === 0
                   ? 'rounded-t-3xl sm:rounded-b-none lg:rounded-tr-none lg:rounded-bl-3xl'
                   : 'sm:rounded-t-none lg:rounded-tr-3xl lg:rounded-bl-none',
-              'rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10'
+              'rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10',
             )}
           >
             <h3
               id={tier.id}
               className={cn(
                 tier.featured ? 'text-indigo-400' : 'text-indigo-600',
-                'text-base/7 font-semibold'
+                'text-base/7 font-semibold',
               )}
             >
               {tier.name}
@@ -102,7 +102,7 @@ export function Pricing() {
                   tier.featured
                     ? 'text-primary-foreground'
                     : 'text-card-foreground',
-                  'text-5xl font-semibold tracking-tight'
+                  'text-5xl font-semibold tracking-tight',
                 )}
               >
                 {tier.priceMonthly}
@@ -121,18 +121,17 @@ export function Pricing() {
                 tier.featured
                   ? 'text-primary-foreground'
                   : 'text-card-foreground',
-                'mt-6 text-base/7'
+                'mt-6 text-base/7',
               )}
             >
               {tier.description}
             </p>
             <ul
-              role="list"
               className={cn(
                 tier.featured
                   ? 'text-muted-foreground'
                   : 'text-muted-foreground',
-                'mt-8 space-y-3 text-sm/6 sm:mt-10'
+                'mt-8 space-y-3 text-sm/6 sm:mt-10',
               )}
             >
               {tier.features.map((feature) => (
@@ -141,7 +140,7 @@ export function Pricing() {
                     aria-hidden="true"
                     className={cn(
                       tier.featured ? 'text-indigo-400' : 'text-indigo-600',
-                      'h-6 w-5 flex-none'
+                      'h-6 w-5 flex-none',
                     )}
                   />
                   {feature}

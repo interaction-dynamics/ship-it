@@ -1,5 +1,5 @@
 import type { MDXComponents } from 'mdx/types'
-import Image, { ImageProps } from 'next/image'
+import Image, { type ImageProps } from 'next/image'
 import { Typography } from '@/components/typography'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {

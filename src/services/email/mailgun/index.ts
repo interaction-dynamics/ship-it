@@ -1,6 +1,6 @@
 import formData from 'form-data'
 import Mailgun from 'mailgun.js'
-import { Email } from '../_types/email'
+import type { Email } from '../_types/email'
 
 /**
  * @see https://documentation.mailgun.com/docs/mailgun/sdk/nodejs_sdk/

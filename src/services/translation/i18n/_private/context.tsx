@@ -1,9 +1,9 @@
 'use client'
 import { createContext, useMemo } from 'react'
-import { Messages } from '../../_types/messages'
-import { Language } from '../../_types/language'
+import type { Language } from '../../_types/language'
+import type { Messages } from '../../_types/messages'
+import type { Parameters } from '../../_types/parameters'
 import { findTranslation } from './findTranslation'
-import { Parameters } from '../../_types/parameters'
 
 interface TranslationContextType {
   locale: string
@@ -11,7 +11,7 @@ interface TranslationContextType {
   t: (
     key: string,
     parameters: Parameters,
-    namespace?: string
+    namespace?: string,
   ) => React.ReactNode
 }
 
@@ -42,17 +42,17 @@ export function TranslationProviderClient({
       t: (
         key: string,
         parameters: Parameters = {},
-        namespace?: string
+        namespace?: string,
       ): React.ReactNode => {
         return findTranslation(
           key,
           messages,
           namespace ?? defaultNamespace,
-          parameters
+          parameters,
         )
       },
     }),
-    [messages, locale, languages, defaultNamespace]
+    [messages, locale, languages, defaultNamespace],
   )
 
   return <TranslationContext value={value}>{children}</TranslationContext>

@@ -1,6 +1,8 @@
 'use client'
 import { Check } from 'lucide-react'
+import { useId, useState } from 'react'
 import { Button } from '@/components/ui/button'
+
 import {
   Card,
   CardContent,
@@ -9,9 +11,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { Switch } from '@/components/ui/switch'
 import { Label } from '@/components/ui/label'
-import { useState } from 'react'
+import { Switch } from '@/components/ui/switch'
 import { useTranslations } from '@/services/translation'
 
 interface Plan {
@@ -41,6 +42,8 @@ export function PricingSection({ plans }: PricingSectionProps) {
 
   const { t } = useTranslations('pricing')
 
+  const billingToggleId = useId()
+
   return (
     <section className="py-16 px-4 w-full max-w-7xl mx-auto">
       <div className="text-center mb-12">
@@ -53,18 +56,18 @@ export function PricingSection({ plans }: PricingSectionProps) {
       </div>
       <div className="flex items-center justify-center mb-8 space-x-2">
         <Label
-          htmlFor="billing-toggle"
+          htmlFor={billingToggleId}
           className={isYearly ? 'text-muted-foreground' : ''}
         >
           {t('Monthly')}
         </Label>
         <Switch
-          id="billing-toggle"
+          id={billingToggleId}
           checked={isYearly}
           onCheckedChange={setIsYearly}
         />
         <Label
-          htmlFor="billing-toggle"
+          htmlFor={billingToggleId}
           className={!isYearly ? 'text-muted-foreground' : ''}
         >
           {t('Yearly')}{' '}

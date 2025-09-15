@@ -1,9 +1,9 @@
 'use client'
-import React, { useEffect, useId, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { useRef } from 'react'
-import { cn } from '@/lib/utils'
+import type React from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { SparklesCore } from '@/components/ui/sparkles'
+import { cn } from '@/lib/utils'
 
 export const Cover = ({
   children,
@@ -27,13 +27,14 @@ export const Cover = ({
       const numberOfBeams = Math.floor(height / 10) // Adjust the divisor to control the spacing
       const positions = Array.from(
         { length: numberOfBeams },
-        (_, i) => (i + 1) * (height / (numberOfBeams + 1))
+        (_, i) => (i + 1) * (height / (numberOfBeams + 1)),
       )
       setBeamPositions(positions)
     }
   }, [])
 
   return (
+    // biome-ignore lint/a11y/noStaticElementInteractions: it is only a visual effect
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -86,9 +87,9 @@ export const Cover = ({
           </motion.div>
         )}
       </AnimatePresence>
-      {beamPositions.map((position, index) => (
+      {beamPositions.map((position) => (
         <Beam
-          key={index}
+          key={position.toString()}
           hovered={hovered}
           duration={Math.random() * 2 + 1}
           delay={Math.random() * 2 + 1}
@@ -132,7 +133,7 @@ export const Cover = ({
         }}
         className={cn(
           'dark:text-white inline-block text-neutral-900 relative z-20 group-hover/cover:text-white transition duration-200',
-          className
+          className,
         )}
       >
         {children}
@@ -171,6 +172,7 @@ export const Beam = ({
       className={cn('absolute inset-x-0 w-full', className)}
       {...svgProps}
     >
+      <title>Beam</title>
       <motion.path
         d={`M0 0.5H${width ?? '600'}`}
         stroke={`url(#svgGradient-${id})`}
@@ -220,7 +222,7 @@ export const CircleIcon = ({
     <div
       className={cn(
         `pointer-events-none animate-pulse group-hover/cover:hidden group-hover/cover:opacity-100 group h-2 w-2 rounded-full bg-neutral-600 dark:bg-white opacity-20 group-hover/cover:bg-white`,
-        className
+        className,
       )}
     ></div>
   )

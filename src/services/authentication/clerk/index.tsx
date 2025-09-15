@@ -1,14 +1,14 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 import {
   ClerkProvider,
   SignInButton as ClerkSignInButton,
   SignUpButton as ClerkSignUpButton,
   UserButton as ClerkUserButton,
 } from '@clerk/nextjs'
-import { Button, type ButtonProps } from '@/components/ui/button'
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 import { protectedRoutes } from '@/app/(main)/(protected)/protected-routes'
+import { Button, type ButtonProps } from '@/components/ui/button'
 
-export { SignedIn, SignedOut, RedirectToSignIn } from '@clerk/nextjs'
+export { RedirectToSignIn, SignedIn, SignedOut } from '@clerk/nextjs'
 
 const isProtectedRoute = createRouteMatcher(protectedRoutes)
 

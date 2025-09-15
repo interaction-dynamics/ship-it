@@ -1,7 +1,3 @@
-import { DarkModeToggle } from '@/components/dark-mode-toggle'
-import { LanguageSelector } from '@/components/language-selector'
-import { Button } from '@/components/ui/button'
-import { WobbleCard } from '@/components/ui/wobble-card'
 import {
   BookText,
   ChartArea,
@@ -11,11 +7,15 @@ import {
   Globe,
   Languages,
   Lock,
-  LucideProps,
+  type LucideProps,
   Mail,
   Sun,
 } from 'lucide-react'
-import { ForwardRefExoticComponent, RefAttributes } from 'react'
+import type { ForwardRefExoticComponent, RefAttributes } from 'react'
+import { DarkModeToggle } from '@/components/dark-mode-toggle'
+import { LanguageSelector } from '@/components/language-selector'
+import { Button } from '@/components/ui/button'
+import { WobbleCard } from '@/components/ui/wobble-card'
 
 interface CardProps {
   containerClassName?: string

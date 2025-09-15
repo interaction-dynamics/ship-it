@@ -1,8 +1,8 @@
 'use server'
-import Stripe from 'stripe'
 import { headers } from 'next/headers'
-import { Plan } from '../_types/plan'
+import Stripe from 'stripe'
 import { logError } from '@/services/monitoring'
+import type { Plan } from '../_types/plan'
 
 const stripe = process.env.STRIPE_SECRET_KEY
   ? new Stripe(process.env.STRIPE_SECRET_KEY ?? '')
@@ -11,7 +11,7 @@ const stripe = process.env.STRIPE_SECRET_KEY
 const getStripe = () => {
   if (!stripe) {
     throw new Error(
-      `Stripe is not configured. Please set environment variable STRIPE_SECRET_KEY`
+      `Stripe is not configured. Please set environment variable STRIPE_SECRET_KEY`,
     )
   }
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import { Translations } from '../../_types/translations'
-import { Parameters } from '../../_types/parameters'
+import type { Parameters } from '../../_types/parameters'
+import type { Translations } from '../../_types/translations'
 
 const splitByArgs = (
   str: string,
-  parameters: Parameters
+  parameters: Parameters,
 ): Array<string | { argName: string }> => {
   let tempStr = str
 
@@ -51,8 +51,8 @@ export const replaceArgs = (str: string, parameters: Parameters) => {
 
   return (
     <>
-      {result.map((item, index) => (
-        <React.Fragment key={index}>{item}</React.Fragment>
+      {result.map((item) => (
+        <React.Fragment key={item?.toString()}>{item}</React.Fragment>
       ))}
     </>
   )
@@ -62,7 +62,7 @@ export const findTranslation = (
   key: string,
   messages: Translations,
   namespace: string,
-  parameters: Parameters = {}
+  parameters: Parameters = {},
 ): React.ReactNode | string => {
   const keys = key.split('.')
 
@@ -74,13 +74,13 @@ export const findTranslation = (
 
       if (acc === undefined) {
         throw new Error(
-          `Impossible to find translation ${key} in namespace ${namespace}`
+          `Impossible to find translation ${key} in namespace ${namespace}`,
         )
       }
 
       if (!(key in acc)) {
         throw new Error(
-          `Impossible to find translation ${key} in namespace ${namespace}`
+          `Impossible to find translation ${key} in namespace ${namespace}`,
         )
       }
 

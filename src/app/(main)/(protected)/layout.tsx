@@ -1,7 +1,7 @@
 import {
+  RedirectToSignIn,
   SignedIn,
   SignedOut,
-  RedirectToSignIn,
 } from '@/services/authentication'
 
 export default function Layout({ children }: React.PropsWithChildren) {

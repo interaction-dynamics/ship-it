@@ -1,6 +1,6 @@
 'use client'
 
-import { Search, ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Search } from 'lucide-react'
 import { ErrorLayout } from '@/components/error-layout'
 import { Button } from '@/components/ui/button'
 

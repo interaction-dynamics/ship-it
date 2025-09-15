@@ -1,7 +1,6 @@
-import { Social } from '../entities/social'
-import { convertSocials } from './convert-socials'
-
 import config from '../../package.json'
+import type { Social } from '../entities/social'
+import { convertSocials } from './convert-socials'
 
 export const version: string = config?.version ?? '0.0.0'
 

@@ -1,13 +1,12 @@
 'use client'
+import { ArrowRight, ChevronRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { AnimatedGradientText } from '@/components/magicui/animated-gradient-text'
-import { Cover } from '@/components/ui/cover'
-
 import { Button } from '@/components/ui/button'
+import { Cover } from '@/components/ui/cover'
 import { getRepositoryUrl } from '@/config/repository'
 import { cn } from '@/lib/utils'
 import { useTranslations } from '@/services/translation'
-import { ArrowRight, ChevronRight } from 'lucide-react'
-import { useEffect, useState } from 'react'
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -28,7 +27,7 @@ export function Hero() {
             <div className="group relative mx-auto flex items-center justify-center rounded-full px-4 py-1.5 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] ">
               <span
                 className={cn(
-                  'absolute inset-0 block h-full w-full animate-gradient rounded-[inherit] bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:300%_100%] p-[1px]'
+                  'absolute inset-0 block h-full w-full animate-gradient rounded-[inherit] bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:300%_100%] p-[1px]',
                 )}
                 style={{
                   WebkitMask:
@@ -81,6 +80,7 @@ export function Hero() {
                 className="flex items-center space-x-2"
               >
                 <svg viewBox="0 0 24 24">
+                  <title>Github</title>
                   <path
                     fill="currentColor"
                     fillRule="evenodd"

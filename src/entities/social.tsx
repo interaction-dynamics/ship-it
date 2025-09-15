@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { z } from 'zod'
 
 export const SocialIconRenderer = z
@@ -7,7 +7,7 @@ export const SocialIconRenderer = z
     z.object({
       className: z.string(),
       'aria-hidden': z.literal('true'),
-    })
+    }),
   )
   .returns(z.custom<ReactNode>())
 

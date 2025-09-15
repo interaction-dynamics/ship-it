@@ -1,14 +1,14 @@
 'use client'
-import { useTranslations } from '@/services/translation'
-import { Button } from '@/components/ui/button'
 import { Globe } from 'lucide-react'
+import type React from 'react'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
+  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-  DropdownMenuCheckboxItem,
 } from '@/components/ui/dropdown-menu'
-import React from 'react'
+import { useTranslations } from '@/services/translation'
 
 export interface LanguageSwitcherProps {
   locale: string

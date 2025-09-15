@@ -14,7 +14,7 @@ export type DateFormatShortOption = keyof typeof TimeFormat
 export function formatDatetimeInternal(
   date: string | Date,
   options?: Intl.DateTimeFormatOptions | DateFormatShortOption,
-  locale: string = 'en-US'
+  locale: string = 'en-US',
 ) {
   const finalOptions =
     typeof options === 'string' ? TimeFormat[options] : options

@@ -1,15 +1,19 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
-import { createPaymentCheckoutSession, Plan, Stripe } from '@/services/payment'
 import { loadStripe } from '@stripe/stripe-js'
+import { Button } from '@/components/ui/button'
+import {
+  createPaymentCheckoutSession,
+  type Plan,
+  type Stripe,
+} from '@/services/payment'
 
 interface CheckoutFormProps {
   plans: Plan[]
 }
 
 const renderProduct = (
-  product: string | Stripe.Product | Stripe.DeletedProduct
+  product: string | Stripe.Product | Stripe.DeletedProduct,
 ) => {
   if (typeof product === 'string') {
     return product
@@ -25,7 +29,7 @@ const renderProduct = (
 export function CheckoutForm({ plans }: CheckoutFormProps) {
   const handleSubmit = async (priceId: string) => {
     const secureStripe = loadStripe(
-      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? ''
+      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? '',
     )
     const session = await createPaymentCheckoutSession(priceId)
 

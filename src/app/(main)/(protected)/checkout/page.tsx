@@ -1,6 +1,6 @@
+import { Section } from '@/components/section'
 import { getPlans } from '@/services/payment'
 import { CheckoutForm } from './_components/checkout-form'
-import { Section } from '@/components/section'
 
 export default async function CheckoutPage() {
   const plans = await getPlans()

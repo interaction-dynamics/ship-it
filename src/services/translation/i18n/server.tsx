@@ -1,12 +1,11 @@
 'use server'
-import { headers } from 'next/headers'
 import { match } from '@formatjs/intl-localematcher'
-import { cookies } from 'next/headers'
 import Negotiator from 'negotiator'
+import { cookies, headers } from 'next/headers'
 import { translationConfig } from '../../../../translations.config'
-import { findTranslation } from './_private/findTranslation'
+import type { Parameters } from '../_types/parameters'
 import { TranslationProviderClient } from './_private/context'
-import { Parameters } from '../_types/parameters'
+import { findTranslation } from './_private/findTranslation'
 
 const NEXT_LOCALE = 'next_locale'
 
@@ -27,11 +26,12 @@ export async function getLocale() {
   const headersList = await headers()
 
   const allHeaders = [...headersList.entries()].reduce(
-    (acc, [name, value]) => ({
-      ...acc,
-      [name]: value,
-    }),
-    {}
+    (acc: Record<string, string | string[] | undefined>, [name, value]) => {
+      acc[name] = value
+
+      return acc
+    },
+    {},
   )
 
   const browerLanguages = new Negotiator({ headers: allHeaders }).languages()
@@ -71,7 +71,7 @@ export async function getTranslations(namespace?: string) {
     t: (
       key: string,
       parameters: Parameters = {},
-      specificNamespace?: string
+      specificNamespace?: string,
     ) => {
       const foundNamespace = specificNamespace ?? namespace ?? defaultNamespace
       return findTranslation(key, messages, foundNamespace, parameters)

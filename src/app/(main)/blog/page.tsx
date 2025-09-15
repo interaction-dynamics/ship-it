@@ -1,12 +1,11 @@
-import { fetchPosts } from '@/services/content-management'
-import { Typography } from '@/components/typography'
+import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-
+import { Typography } from '@/components/typography'
 import { Button } from '@/components/ui/button'
 import { Card, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { formatDatetime } from '@/lib/format-datetime'
+import { fetchPosts } from '@/services/content-management'
 
 export default async function BlogPage() {
   const posts = await fetchPosts()

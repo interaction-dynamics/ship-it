@@ -1,10 +1,10 @@
-import { Typography } from '@/components/typography'
-import { Button } from '@/components/ui/button'
-import { fetchOnePost } from '@/services/content-management'
 import { PortableText } from '@portabletext/react'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { Typography } from '@/components/typography'
+import { Button } from '@/components/ui/button'
+import { fetchOnePost } from '@/services/content-management'
 
 export interface OneBlogPageProps {
   params: Promise<{ postSlug: string }>

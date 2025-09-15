@@ -1,8 +1,8 @@
 'use client'
-import { ThemeProvider } from '@/components/theme-provider'
+import { AlertTriangle, Home, RefreshCw } from 'lucide-react'
 
 import { useEffect } from 'react'
-import { Home, AlertTriangle, RefreshCw } from 'lucide-react'
+import { ThemeProvider } from '@/components/theme-provider'
 
 export default function GlobalError({
   error,
@@ -19,7 +19,7 @@ export default function GlobalError({
   }, [error])
 
   return (
-    <html>
+    <html lang="en">
       <body>
         <ThemeProvider
           attribute="class"
@@ -64,6 +64,7 @@ export default function GlobalError({
               <div className="pt-6 space-y-4">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button
+                    type="button"
                     onClick={() => reset()}
                     className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"
                   >
@@ -71,7 +72,10 @@ export default function GlobalError({
                     <span>Restart Application</span>
                   </button>
                   <button
-                    onClick={() => (window.location.href = '/')}
+                    type="button"
+                    onClick={() => {
+                      window.location.href = '/'
+                    }}
                     className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700"
                   >
                     <Home size={18} />

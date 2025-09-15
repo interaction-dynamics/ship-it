@@ -1,7 +1,7 @@
 'use server'
-import { Hero } from './_components/hero'
-import { Features } from './_components/features'
 import { Differentiators } from './_components/differentiators'
+import { Features } from './_components/features'
+import { Hero } from './_components/hero'
 import { Pricing } from './_components/pricing'
 
 export default async function Index() {

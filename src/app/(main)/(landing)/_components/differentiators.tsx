@@ -24,20 +24,20 @@ function Card({
     <div
       className={cn(
         'group relative bg-gradient-to-br border rounded-xl p-6 transition-all duration-300 hover:scale-105',
-        containerClassName
+        containerClassName,
       )}
     >
       <div
         className={cn(
           'absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity',
-          className
+          className,
         )}
       ></div>
       <div className="relative z-10">
         <div
           className={cn(
             'w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform',
-            titleClassName
+            titleClassName,
           )}
         >
           <span className="text-foreground font-bold text-lg">{icon}</span>

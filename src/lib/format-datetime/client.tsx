@@ -1,6 +1,6 @@
 import { useTranslations } from '@/services/translation'
 import {
-  DateFormatShortOption,
+  type DateFormatShortOption,
   formatDatetimeInternal,
 } from './format-datetime'
 
@@ -10,7 +10,7 @@ export function useDatetime() {
   return {
     formatDatetime: (
       date: string | Date,
-      options: Intl.DateTimeFormatOptions | DateFormatShortOption = 'standard'
+      options: Intl.DateTimeFormatOptions | DateFormatShortOption = 'standard',
     ) => formatDatetimeInternal(date, options, locale),
   }
 }

@@ -1,6 +1,6 @@
 import { Section } from '@/components/section'
-import { EmailButton } from './_components/email-button'
 import { getTranslations } from '@/services/translation'
+import { EmailButton } from './_components/email-button'
 
 export default async function EmailPage() {
   const { t } = await getTranslations('email')

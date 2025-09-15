@@ -1,13 +1,16 @@
 'use client'
 import Script from 'next/script'
+import { useId } from 'react'
 
 export function HotJar() {
+  const id = useId()
+
   if (
     process.env.NODE_ENV === 'production' &&
     process.env.NEXT_PUBLIC_HOTJAR_ID
   ) {
     return (
-      <Script id="hotjar">
+      <Script id={id}>
         {`
           (function (h, o, t, j, a, r) {
             h.hj =

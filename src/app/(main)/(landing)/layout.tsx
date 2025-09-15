@@ -1,7 +1,7 @@
-import { LanguageSelector } from '@/components/language-selector'
-import { DarkModeToggle } from '@/components/dark-mode-toggle'
-import { Footer } from '@/components/sitemap-footer'
 import { Terminal } from 'lucide-react'
+import { DarkModeToggle } from '@/components/dark-mode-toggle'
+import { LanguageSelector } from '@/components/language-selector'
+import { Footer } from '@/components/sitemap-footer'
 import { Button } from '@/components/ui/button'
 import { getRepositoryUrl } from '@/config/repository'
 
@@ -30,6 +30,7 @@ function Header() {
             className="flex items-center gap-1"
           >
             <svg viewBox="0 0 24 24">
+              <title>Github</title>
               <path
                 fill="currentColor"
                 fillRule="evenodd"

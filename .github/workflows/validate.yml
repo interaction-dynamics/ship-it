@@ -39,8 +39,7 @@ jobs:
         run: pnpm build
       - name: Format 👕
         run: |
-          pnpm lint
-          pnpm format
+          pnpm check
       - name: Unit Tests ✔️
         run: pnpm test:ci
 

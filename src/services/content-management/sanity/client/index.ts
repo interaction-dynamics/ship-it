@@ -1,6 +1,6 @@
 'use server'
-import { Post } from '@/entities/post'
 import { createClient } from '@sanity/client'
+import type { Post } from '@/entities/post'
 import { mapPost } from './adapters/post'
 
 /**
@@ -20,7 +20,7 @@ const sanity =
 const getSanity = () => {
   if (!sanity) {
     throw new Error(
-      `Sanity is not configured. Please set environment variables NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET`
+      `Sanity is not configured. Please set environment variables NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET`,
     )
   }
 
@@ -37,7 +37,7 @@ export async function fetchPosts(): Promise<Post[]> {
         {
           cache: 'force-cache',
           next: { revalidate: 60 },
-        }
+        },
       )
 
     return posts.map(mapPost)
@@ -57,7 +57,7 @@ export async function fetchOnePost(slug: string): Promise<Post | null> {
         {
           cache: 'force-cache',
           next: { revalidate: 60 },
-        }
+        },
       )
 
     return post ? mapPost(post) : null

@@ -1,8 +1,8 @@
 'use client'
 
+import { Angry, Meh, MessageSquare, Smile } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Angry, Smile, Meh, MessageSquare } from 'lucide-react'
 
 import {
   Popover,
@@ -36,7 +36,7 @@ function Emoji({
       onClick={onClick}
       className={cn(
         `p-1.5 rounded-full cursor-pointer text-muted-foreground hover:text-foreground transition-colors hover:bg-accent`,
-        selected ? 'bg-accent text-foreground' : ''
+        selected ? 'bg-accent text-foreground' : '',
       )}
     >
       <span className="text-xl">

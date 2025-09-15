@@ -1,8 +1,8 @@
 'use client'
 import { useContext } from 'react'
 import { changeLocale } from '@/services/translation'
+import type { Parameters } from '../_types/parameters'
 import { TranslationContext } from './_private/context'
-import { Parameters } from '../_types/parameters'
 
 export function useTranslations(namespace?: string) {
   const { locale, t, languages } = useContext(TranslationContext)
