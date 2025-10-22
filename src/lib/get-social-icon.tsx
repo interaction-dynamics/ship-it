@@ -133,5 +133,7 @@ const icons: Record<string, SocialIconRenderer> = {
   ),
 }
 
-export const getSocialIcon = (social: Social) =>
-  icons[social.name] ?? social.icon
+const defaultIcon = () => <></>
+
+export const getSocialIcon = ({ name }: { name: string }) =>
+  icons[name] ?? defaultIcon
