@@ -2,7 +2,6 @@
   "file_scan_exclusions": [
     ".vercel",
     ".next",
-    ".git",
     "node_module",
     "test-results",
     "next-env.d.ts",
