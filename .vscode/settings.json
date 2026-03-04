@@ -1,9 +1,9 @@
 {
-	"files.exclude": {
-		"**/.vercel": true,
-		"**/.next": true,
-		"**/.clerk": true,
-		"**/next-env.d.ts": true,
-		"**/.turbo": true
-	}
+  "files.exclude": {
+    "**/.vercel": true,
+    "**/.next": true,
+    "**/.clerk": true,
+    "**/next-env.d.ts": true,
+    "**/.turbo": true
+  }
 }
