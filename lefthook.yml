@@ -1,0 +1,11 @@
+# Lefthook configuration
+# https://github.com/evilmartians/lefthook
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm commitlint --edit {1}
+pre-commit:
+  commands:
+    clean:
+      run: echo "ok"

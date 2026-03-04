@@ -1,10 +1,12 @@
 {
-  "file_scan_exclusions": [
-    ".vercel",
-    ".next",
-    "node_module",
-    "test-results",
-    "next-env.d.ts",
-    ".swc"
-  ]
+	"file_scan_exclusions": [
+		".vercel",
+		".next",
+		"node_modules",
+		"test-results",
+		"next-env.d.ts",
+		".swc",
+		".git",
+		".turbo"
+	]
 }
