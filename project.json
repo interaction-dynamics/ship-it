@@ -1,22 +1,23 @@
 {
-  "title": "Ship it",
-  "company": "Interaction Dynamics",
-  "socials": {
-    "x": "https://example.com",
-    "youtube": "https://example.com",
-    "tiktok": "",
-    "instagram": "https://example.com",
-    "facebook": "",
-    "linkedin": "",
-    "github": "https://example.com",
-    "medium": "https://example.com",
-    "slack": "",
-    "gitlab": "",
-    "twitch": "",
-    "pinterest": "",
-    "whatsapp": "",
-    "snapchat": "",
-    "wechat": "",
-    "email": "mailto:contact@interaction-dynamics.io"
-  }
+	"title": "Ship it",
+	"company": "Interaction Dynamics",
+	"description": "The ultimate boilerplate for modern web projects",
+	"socials": {
+		"x": "https://example.com",
+		"youtube": "https://example.com",
+		"tiktok": "",
+		"instagram": "https://example.com",
+		"facebook": "",
+		"linkedin": "",
+		"github": "https://example.com",
+		"medium": "https://example.com",
+		"slack": "",
+		"gitlab": "",
+		"twitch": "",
+		"pinterest": "",
+		"whatsapp": "",
+		"snapchat": "",
+		"wechat": "",
+		"email": "mailto:contact@interaction-dynamics.io"
+	}
 }
