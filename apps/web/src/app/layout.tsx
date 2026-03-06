@@ -4,11 +4,11 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
 import type { Metadata } from "next";
+import { AnalyticsScript } from "@/adapters/analytics";
+import { AuthenticationProvider } from "@/adapters/authentication";
+import { ExperimentationProvider } from "@/adapters/experimentation";
+import { dir, getLocale, TranslationProvider } from "@/adapters/translation";
 import { getProductDescription, getProductName } from "@/config/project";
-import { ABTestingProvider } from "@/services/ab-testing";
-import { AnalyticsScript } from "@/services/analytics";
-import { AuthenticationProvider } from "@/services/authentication";
-import { dir, getLocale, TranslationProvider } from "@/services/translation";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -35,7 +35,7 @@ export default async function LocaleLayout({ children }: LocaleLayoutProps) {
 
 	return (
 		<AuthenticationProvider>
-			<ABTestingProvider>
+			<ExperimentationProvider>
 				<html lang={locale} dir={dir(locale)} suppressHydrationWarning>
 					<head>
 						<AnalyticsScript />
@@ -56,7 +56,7 @@ export default async function LocaleLayout({ children }: LocaleLayoutProps) {
 						{shouldInjectToolbar && <VercelToolbar />}
 					</body>
 				</html>
-			</ABTestingProvider>
+			</ExperimentationProvider>
 		</AuthenticationProvider>
 	);
 }

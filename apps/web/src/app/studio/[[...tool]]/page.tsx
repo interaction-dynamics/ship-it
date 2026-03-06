@@ -1,9 +1,9 @@
-import { Studio } from "@/services/content-management/studio";
+import { Studio } from "@/adapters/content-management/studio";
 
 export {
 	metadata,
 	viewport,
-} from "@/services/content-management/studio";
+} from "@/adapters/content-management/studio";
 
 export const dynamic = "force-static";
 

@@ -1,7 +1,7 @@
+import { getTranslations } from "@/adapters/translation";
 import { getCompanyName, getSocials } from "@/config/project";
 import { getCurrentYear } from "@/lib/current-date";
 import { getSocialIcon } from "@/lib/get-social-icon";
-import { getTranslations } from "@/services/translation";
 
 const siteMap = {
 	Checkout: "/checkout",

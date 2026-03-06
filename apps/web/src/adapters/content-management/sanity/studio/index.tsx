@@ -9,11 +9,19 @@
  * /!| WARNING this page cannot be protected by authentication middleware because clerk is not available in the studio
  * and it crashes the page
  */
-import { NextStudio } from "next-sanity/studio";
+
+import type { Metadata, Viewport } from "next";
+import {
+	NextStudio,
+	metadata as sanityMetadata,
+	viewport as sanityViewport,
+} from "next-sanity/studio";
 import config from "./sanity.config";
 
 export const dynamic = "force-static";
-export { metadata, viewport } from "next-sanity/studio";
+
+export const metadata: Metadata = sanityMetadata;
+export const viewport: Viewport = sanityViewport as Viewport;
 
 export function Studio() {
 	return <NextStudio config={config} />;

@@ -1,6 +1,9 @@
 {
 	"name": "@ship-it/web",
 	"version": "0.1.0",
+	"repository": {
+		"url": "https://github.com/interaction-dynamics/ship-it"
+	},
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",

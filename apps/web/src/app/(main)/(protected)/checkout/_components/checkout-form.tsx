@@ -1,57 +1,57 @@
-'use client'
+"use client";
 
-import { loadStripe } from '@stripe/stripe-js'
-import { Button } from '@/components/ui/button'
+import { loadStripe } from "@stripe/stripe-js";
 import {
-  createPaymentCheckoutSession,
-  type Plan,
-  type Stripe,
-} from '@/services/payment'
+	createPaymentCheckoutSession,
+	type Plan,
+	type Stripe,
+} from "@/adapters/payment";
+import { Button } from "@/components/ui/button";
 
 interface CheckoutFormProps {
-  plans: Plan[]
+	plans: Plan[];
 }
 
 const renderProduct = (
-  product: string | Stripe.Product | Stripe.DeletedProduct,
+	product: string | Stripe.Product | Stripe.DeletedProduct,
 ) => {
-  if (typeof product === 'string') {
-    return product
-  }
+	if (typeof product === "string") {
+		return product;
+	}
 
-  if (product.deleted) {
-    return 'deleted product'
-  }
+	if (product.deleted) {
+		return "deleted product";
+	}
 
-  return product.name
-}
+	return product.name;
+};
 
 export function CheckoutForm({ plans }: CheckoutFormProps) {
-  const handleSubmit = async (priceId: string) => {
-    const secureStripe = loadStripe(
-      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? '',
-    )
-    const session = await createPaymentCheckoutSession(priceId)
+	const handleSubmit = async (priceId: string) => {
+		const secureStripe = loadStripe(
+			process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? "",
+		);
+		const session = await createPaymentCheckoutSession(priceId);
 
-    if (!session) {
-      return
-    }
+		if (!session) {
+			return;
+		}
 
-    return (await secureStripe)?.redirectToCheckout({ sessionId: session.id })
-  }
+		return (await secureStripe)?.redirectToCheckout({ sessionId: session.id });
+	};
 
-  return (
-    <div>
-      <h1>Choose a Subscription Plan</h1>
-      {plans.map((plan) => (
-        <div key={plan.id}>
-          <h2>{renderProduct(plan.product)}</h2>
-          <p>
-            Price: ${plan.price ?? 0 / 100} / {plan.interval}
-          </p>
-          <Button onClick={() => handleSubmit(plan.price_id)}>Subscribe</Button>
-        </div>
-      ))}
-    </div>
-  )
+	return (
+		<div>
+			<h1>Choose a Subscription Plan</h1>
+			{plans.map((plan) => (
+				<div key={plan.id}>
+					<h2>{renderProduct(plan.product)}</h2>
+					<p>
+						Price: ${plan.price ?? 0 / 100} / {plan.interval}
+					</p>
+					<Button onClick={() => handleSubmit(plan.price_id)}>Subscribe</Button>
+				</div>
+			))}
+		</div>
+	);
 }

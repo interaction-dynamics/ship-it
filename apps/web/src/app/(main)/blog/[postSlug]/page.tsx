@@ -2,9 +2,9 @@ import { PortableText } from "@portabletext/react";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { fetchOnePost } from "@/adapters/content-management/client";
 import { Typography } from "@/components/typography";
 import { Button } from "@/components/ui/button";
-import { fetchOnePost } from "@/services/content-management/client";
 
 export interface OneBlogPageProps {
 	params: Promise<{ postSlug: string }>;

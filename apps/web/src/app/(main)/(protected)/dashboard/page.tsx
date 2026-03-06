@@ -1,8 +1,8 @@
-import { Section } from '@/components/section'
-import { getTranslations } from '@/services/translation'
+import { getTranslations } from "@/adapters/translation";
+import { Section } from "@/components/section";
 
 export default async function DashboardPage() {
-  const { t } = await getTranslations('dashboard')
+	const { t } = await getTranslations("dashboard");
 
-  return <Section title={t('title')}></Section>
+	return <Section title={t("title")}></Section>;
 }

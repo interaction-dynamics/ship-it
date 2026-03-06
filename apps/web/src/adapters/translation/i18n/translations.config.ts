@@ -1,4 +1,4 @@
-import type { Config } from "@/services/translation/_types/config";
+import type { Config } from "@/adapters/translation/_types/config";
 
 export const translationConfig: Config = {
 	languages: [
