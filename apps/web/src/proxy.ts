@@ -1,6 +1,6 @@
 import { authMiddleware } from "@/adapters/authentication";
 
-export const proxy = authMiddleware();
+export const proxy = authMiddleware;
 
 export const config = {
 	matcher: [
