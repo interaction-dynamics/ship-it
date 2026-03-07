@@ -1,1 +1,1 @@
-export * from './analytics-script'
+export * from './analytics-script';

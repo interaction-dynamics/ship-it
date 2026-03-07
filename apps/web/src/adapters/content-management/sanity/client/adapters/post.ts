@@ -7,6 +7,6 @@ export function mapPost(post: any) {
     content: post.body,
     date: post._createdAt,
     imageUrl: undefined,
-    categories: [],
-  }
+    categories: []
+  };
 }

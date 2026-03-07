@@ -1,24 +1,24 @@
 {
-	"name": "ship-it",
-	"version": "1.0.0",
-	"description": "The ultimate boilerplate for modern web projects",
-	"scripts": {
-		"postinstall": "lefthook install",
-		"commitlint": "commitlint --from=HEAD~1 --config ./.config/commitlint.config.ts",
-		"dev": "cd apps/web && pnpm dev",
-		"build": "cd apps/web && pnpm build",
-		"lint": "oxlint",
-		"lint:fix": "oxlint --fix",
-		"format": "oxfmt --check",
-		"format:fix": "oxfmt"
-	},
-	"devDependencies": {
-		"@commitlint/cli": "^19.8.0",
-		"@commitlint/config-conventional": "^19.8.0",
-		"@commitlint/types": "^20.4.3",
-		"lefthook": "^2.1.0",
-		"oxfmt": "^0.36.0",
-		"oxlint": "1.51.0"
-	},
-	"packageManager": "pnpm@10.30.3"
+  "name": "ship-it",
+  "version": "1.0.0",
+  "description": "The ultimate boilerplate for modern web projects",
+  "scripts": {
+    "postinstall": "lefthook install",
+    "commitlint": "commitlint --from=HEAD~1 --config ./.config/commitlint.config.ts",
+    "dev": "cd apps/web && pnpm dev",
+    "build": "cd apps/web && pnpm build",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt --check",
+    "format:fix": "oxfmt"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/types": "^20.4.3",
+    "lefthook": "^2.1.0",
+    "oxfmt": "^0.36.0",
+    "oxlint": "1.51.0"
+  },
+  "packageManager": "pnpm@10.30.3"
 }

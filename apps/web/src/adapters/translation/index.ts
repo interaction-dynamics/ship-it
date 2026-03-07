@@ -1,4 +1,4 @@
-export * from './i18n'
+export * from './i18n';
 
 const rightToLeftLocales = [
   'ar',
@@ -12,11 +12,11 @@ const rightToLeftLocales = [
   'ku',
   'ps',
   'ur',
-  'yi',
-]
+  'yi'
+];
 
-const isRTL = (locale: string) => rightToLeftLocales.includes(locale)
+const isRTL = (locale: string) => rightToLeftLocales.includes(locale);
 
 export function dir(locale: string) {
-  return isRTL(locale) ? 'rtl' : 'ltr'
+  return isRTL(locale) ? 'rtl' : 'ltr';
 }

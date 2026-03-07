@@ -1,8 +1,8 @@
-import { Typography } from './typography'
+import { Typography } from './typography';
 
 export interface SectionProps {
-  title: React.ReactNode
-  children?: React.ReactNode
+  title: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export function Section({ title, children }: SectionProps) {
@@ -11,5 +11,5 @@ export function Section({ title, children }: SectionProps) {
       <Typography variant="h1">{title}</Typography>
       <div>{children}</div>
     </main>
-  )
+  );
 }

@@ -1,5 +1,5 @@
 interface BlogLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function BlogLayout({ children }: BlogLayoutProps) {
@@ -7,5 +7,5 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
     <div>
       <main className="max-w-5xl m-auto my-2 p-3">{children}</main>
     </div>
-  )
+  );
 }

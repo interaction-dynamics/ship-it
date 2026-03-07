@@ -1,34 +1,29 @@
-'use client'
+'use client';
 
-import { Angry, Meh, MessageSquare, Smile } from 'lucide-react'
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
+import { Angry, Meh, MessageSquare, Smile } from 'lucide-react';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
 
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
-import { Textarea } from '@/components/ui/textarea'
-import { cn } from '@/lib/utils'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Textarea } from '@/components/ui/textarea';
+import { cn } from '@/lib/utils';
 
 const emojis = {
   happy: Smile,
   neutral: Meh,
-  sad: Angry,
-} as const
+  sad: Angry
+} as const;
 
 function Emoji({
   emoji,
   onClick,
-  selected,
+  selected
 }: {
-  emoji: string
-  onClick: () => void
-  selected: boolean
+  emoji: string;
+  onClick: () => void;
+  selected: boolean;
 }) {
-  const Component =
-    emoji in emojis ? emojis[emoji as keyof typeof emojis] : null
+  const Component = emoji in emojis ? emojis[emoji as keyof typeof emojis] : null;
 
   return (
     <button
@@ -36,28 +31,26 @@ function Emoji({
       onClick={onClick}
       className={cn(
         `p-1.5 rounded-full cursor-pointer text-muted-foreground hover:text-foreground transition-colors hover:bg-accent`,
-        selected ? 'bg-accent text-foreground' : '',
+        selected ? 'bg-accent text-foreground' : ''
       )}
     >
-      <span className="text-xl">
-        {Component ? <Component className="h-4 w-4" /> : null}
-      </span>
+      <span className="text-xl">{Component ? <Component className="h-4 w-4" /> : null}</span>
     </button>
-  )
+  );
 }
 
 export function FeedbackButton() {
-  const [open, setOpen] = useState(false)
-  const [feedbackText, setFeedbackText] = useState('')
-  const [selectedEmoji, setSelectedEmoji] = useState<string | null>(null)
+  const [open, setOpen] = useState(false);
+  const [feedbackText, setFeedbackText] = useState('');
+  const [selectedEmoji, setSelectedEmoji] = useState<string | null>(null);
 
   const handleSubmit = () => {
-    setOpen(false)
+    setOpen(false);
     setTimeout(() => {
-      setFeedbackText('')
-      setSelectedEmoji(null)
-    }, 300)
-  }
+      setFeedbackText('');
+      setSelectedEmoji(null);
+    }, 300);
+  };
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -99,5 +92,5 @@ export function FeedbackButton() {
         </div>
       </PopoverContent>
     </Popover>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-'use server'
-import { Differentiators } from './_components/differentiators'
-import { Features } from './_components/features'
-import { Hero } from './_components/hero'
-import { Pricing } from './_components/pricing'
+'use server';
+import { Differentiators } from './_components/differentiators';
+import { Features } from './_components/features';
+import { Hero } from './_components/hero';
+import { Pricing } from './_components/pricing';
 
 export default async function Index() {
   return (
@@ -130,5 +130,5 @@ export default async function Index() {
       </main> */}
       </main>
     </>
-  )
+  );
 }

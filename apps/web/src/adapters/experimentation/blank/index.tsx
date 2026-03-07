@@ -1,6 +1,7 @@
-import type { IExperimentationProvider } from "../interfaces";
+import type { IExperimentationProvider } from '../interfaces';
 
-export const ExperimentationProvider: IExperimentationProvider["ExperimentProvider"] =
-	({ children }) => {
-		return <>{children}</>;
-	};
+export const ExperimentationProvider: IExperimentationProvider['ExperimentProvider'] = ({
+  children
+}) => {
+  return <>{children}</>;
+};

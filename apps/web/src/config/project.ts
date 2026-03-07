@@ -1,7 +1,7 @@
-import project from "../../../../project.json";
+import project from '../../../../project.json';
 
 export const getCompanyName = (): string => {
-	return project.company ?? "Your Company, Inc.";
+  return project.company ?? 'Your Company, Inc.';
 };
 
 export const getProductName = (): string => project.title;

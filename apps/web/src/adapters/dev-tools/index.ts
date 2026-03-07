@@ -1,3 +1,3 @@
-import * as vercelToolbar from './vercel-toolbar'
+import * as vercelToolbar from './vercel-toolbar';
 
-export const wrappers = [...vercelToolbar.wrappers]
+export const wrappers = [...vercelToolbar.wrappers];

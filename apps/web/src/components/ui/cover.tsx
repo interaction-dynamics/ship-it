@@ -1,37 +1,37 @@
-'use client'
-import { AnimatePresence, motion } from 'motion/react'
-import type React from 'react'
-import { useEffect, useId, useRef, useState } from 'react'
-import { SparklesCore } from '@/components/ui/sparkles'
-import { cn } from '@/lib/utils'
+'use client';
+import { AnimatePresence, motion } from 'motion/react';
+import type React from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
+import { SparklesCore } from '@/components/ui/sparkles';
+import { cn } from '@/lib/utils';
 
 export const Cover = ({
   children,
-  className,
+  className
 }: {
-  children?: React.ReactNode
-  className?: string
+  children?: React.ReactNode;
+  className?: string;
 }) => {
-  const [hovered, setHovered] = useState(false)
+  const [hovered, setHovered] = useState(false);
 
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null);
 
-  const [containerWidth, setContainerWidth] = useState(0)
-  const [beamPositions, setBeamPositions] = useState<number[]>([])
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [beamPositions, setBeamPositions] = useState<number[]>([]);
 
   useEffect(() => {
     if (ref.current) {
-      setContainerWidth(ref.current?.clientWidth ?? 0)
+      setContainerWidth(ref.current?.clientWidth ?? 0);
 
-      const height = ref.current?.clientHeight ?? 0
-      const numberOfBeams = Math.floor(height / 10) // Adjust the divisor to control the spacing
+      const height = ref.current?.clientHeight ?? 0;
+      const numberOfBeams = Math.floor(height / 10); // Adjust the divisor to control the spacing
       const positions = Array.from(
         { length: numberOfBeams },
-        (_, i) => (i + 1) * (height / (numberOfBeams + 1)),
-      )
-      setBeamPositions(positions)
+        (_, i) => (i + 1) * (height / (numberOfBeams + 1))
+      );
+      setBeamPositions(positions);
     }
-  }, [])
+  }, []);
 
   return (
     // biome-ignore lint/a11y/noStaticElementInteractions: it is only a visual effect
@@ -49,21 +49,21 @@ export const Cover = ({
             exit={{ opacity: 0 }}
             transition={{
               opacity: {
-                duration: 0.2,
-              },
+                duration: 0.2
+              }
             }}
             className="h-full w-full overflow-hidden absolute inset-0"
           >
             <motion.div
               animate={{
-                translateX: ['-50%', '0%'],
+                translateX: ['-50%', '0%']
               }}
               transition={{
                 translateX: {
                   duration: 10,
                   ease: 'linear',
-                  repeat: Infinity,
-                },
+                  repeat: Infinity
+                }
               }}
               className="w-[200%] h-full flex"
             >
@@ -95,7 +95,7 @@ export const Cover = ({
           delay={Math.random() * 2 + 1}
           width={containerWidth}
           style={{
-            top: `${position}px`,
+            top: `${position}px`
           }}
         />
       ))}
@@ -104,36 +104,36 @@ export const Cover = ({
         animate={{
           scale: hovered ? 0.8 : 1,
           x: hovered ? [0, -30, 30, -30, 30, 0] : 0,
-          y: hovered ? [0, 30, -30, 30, -30, 0] : 0,
+          y: hovered ? [0, 30, -30, 30, -30, 0] : 0
         }}
         exit={{
           filter: 'none',
           scale: 1,
           x: 0,
-          y: 0,
+          y: 0
         }}
         transition={{
           duration: 0.2,
           x: {
             duration: 0.2,
             repeat: Infinity,
-            repeatType: 'loop',
+            repeatType: 'loop'
           },
           y: {
             duration: 0.2,
             repeat: Infinity,
-            repeatType: 'loop',
+            repeatType: 'loop'
           },
           scale: {
-            duration: 0.2,
+            duration: 0.2
           },
           filter: {
-            duration: 0.2,
-          },
+            duration: 0.2
+          }
         }}
         className={cn(
           'dark:text-white inline-block text-neutral-900 relative z-20 group-hover/cover:text-white transition duration-200',
-          className,
+          className
         )}
       >
         {children}
@@ -143,8 +143,8 @@ export const Cover = ({
       <CircleIcon className="absolute -left-[2px] -top-[2px]" delay={0.8} />
       <CircleIcon className="absolute -bottom-[2px] -left-[2px]" delay={1.6} />
     </div>
-  )
-}
+  );
+};
 
 export const Beam = ({
   className,
@@ -154,13 +154,13 @@ export const Beam = ({
   width = 600,
   ...svgProps
 }: {
-  className?: string
-  delay?: number
-  duration?: number
-  hovered?: boolean
-  width?: number
+  className?: string;
+  delay?: number;
+  duration?: number;
+  hovered?: boolean;
+  width?: number;
 } & React.ComponentProps<typeof motion.svg>) => {
-  const id = useId()
+  const id = useId();
 
   return (
     <motion.svg
@@ -173,10 +173,7 @@ export const Beam = ({
       {...svgProps}
     >
       <title>Beam</title>
-      <motion.path
-        d={`M0 0.5H${width ?? '600'}`}
-        stroke={`url(#svgGradient-${id})`}
-      />
+      <motion.path d={`M0 0.5H${width ?? '600'}`} stroke={`url(#svgGradient-${id})`} />
 
       <defs>
         <motion.linearGradient
@@ -187,20 +184,20 @@ export const Beam = ({
             x1: '0%',
             x2: hovered ? '-10%' : '-5%',
             y1: 0,
-            y2: 0,
+            y2: 0
           }}
           animate={{
             x1: '110%',
             x2: hovered ? '100%' : '105%',
             y1: 0,
-            y2: 0,
+            y2: 0
           }}
           transition={{
             duration: hovered ? 0.5 : (duration ?? 2),
             ease: 'linear',
             repeat: Infinity,
             delay: hovered ? Math.random() * (1 - 0.2) + 0.2 : 0,
-            repeatDelay: hovered ? Math.random() * (2 - 1) + 1 : (delay ?? 1),
+            repeatDelay: hovered ? Math.random() * (2 - 1) + 1 : (delay ?? 1)
           }}
         >
           <stop stopColor="#2EB9DF" stopOpacity="0" />
@@ -209,21 +206,16 @@ export const Beam = ({
         </motion.linearGradient>
       </defs>
     </motion.svg>
-  )
-}
+  );
+};
 
-export const CircleIcon = ({
-  className,
-}: {
-  className?: string
-  delay?: number
-}) => {
+export const CircleIcon = ({ className }: { className?: string; delay?: number }) => {
   return (
     <div
       className={cn(
         `pointer-events-none animate-pulse group-hover/cover:hidden group-hover/cover:opacity-100 group h-2 w-2 rounded-full bg-neutral-600 dark:bg-white opacity-20 group-hover/cover:bg-white`,
-        className,
+        className
       )}
     ></div>
-  )
-}
+  );
+};

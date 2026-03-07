@@ -1,8 +1,8 @@
-import type { Language } from './language'
+import type { Language } from './language';
 
 export interface Config {
-  languages: Language[]
-  namespaces: string[]
-  defaultNamespace: string
-  defaultLocale: string
+  languages: Language[];
+  namespaces: string[];
+  defaultNamespace: string;
+  defaultLocale: string;
 }

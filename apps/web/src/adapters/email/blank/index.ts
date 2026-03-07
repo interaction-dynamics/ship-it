@@ -1,5 +1,5 @@
-import type { Email } from "../interfaces";
+import type { Email } from '../interfaces';
 
 export function sendEmail(_email: Email): Promise<void> {
-	throw new Error("Not implemented");
+  throw new Error('Not implemented');
 }

@@ -1,14 +1,11 @@
-'use client'
-import Script from 'next/script'
-import { useId } from 'react'
+'use client';
+import Script from 'next/script';
+import { useId } from 'react';
 
 export function HotJar() {
-  const id = useId()
+  const id = useId();
 
-  if (
-    process.env.NODE_ENV === 'production' &&
-    process.env.NEXT_PUBLIC_HOTJAR_ID
-  ) {
+  if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_HOTJAR_ID) {
     return (
       <Script id={id}>
         {`
@@ -28,7 +25,7 @@ export function HotJar() {
           })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
         `}
       </Script>
-    )
+    );
   }
-  return null
+  return null;
 }

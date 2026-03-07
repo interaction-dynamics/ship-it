@@ -1,7 +1,7 @@
-'use client'
-import { ArrowLeft, Shield } from 'lucide-react'
-import { ErrorLayout } from '@/components/error-layout'
-import { Button } from '@/components/ui/button'
+'use client';
+import { ArrowLeft, Shield } from 'lucide-react';
+import { ErrorLayout } from '@/components/error-layout';
+import { Button } from '@/components/ui/button';
 
 export default function ForbiddenError() {
   return (
@@ -18,5 +18,5 @@ export default function ForbiddenError() {
         <span>Go Back</span>
       </Button>
     </ErrorLayout>
-  )
+  );
 }

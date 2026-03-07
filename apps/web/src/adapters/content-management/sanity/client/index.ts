@@ -1,31 +1,30 @@
-'use server'
-import { createClient } from '@sanity/client'
-import type { Post } from '@/entities/post'
-import { mapPost } from './adapters/post'
+'use server';
+import { createClient } from '@sanity/client';
+import type { Post } from '@/entities/post';
+import { mapPost } from './adapters/post';
 
 /**
  * @see https://www.sanity.io/docs/js-client
  */
 const sanity =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID &&
-  process.env.NEXT_PUBLIC_SANITY_DATASET
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID && process.env.NEXT_PUBLIC_SANITY_DATASET
     ? createClient({
         projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? '',
         dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? '',
         useCdn: process.env.NODE_ENV === 'production',
-        apiVersion: '2024-03-08',
+        apiVersion: '2024-03-08'
       })
-    : null
+    : null;
 
 const getSanity = () => {
   if (!sanity) {
     throw new Error(
-      `Sanity is not configured. Please set environment variables NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET`,
-    )
+      `Sanity is not configured. Please set environment variables NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET`
+    );
   }
 
-  return sanity
-}
+  return sanity;
+};
 
 export async function fetchPosts(): Promise<Post[]> {
   try {
@@ -36,14 +35,14 @@ export async function fetchPosts(): Promise<Post[]> {
         {},
         {
           cache: 'force-cache',
-          next: { revalidate: 60 },
-        },
-      )
+          next: { revalidate: 60 }
+        }
+      );
 
-    return posts.map(mapPost)
+    return posts.map(mapPost);
   } catch (error) {
-    console.error('Failed to fetch posts', error)
-    return []
+    console.error('Failed to fetch posts', error);
+    return [];
   }
 }
 
@@ -56,13 +55,13 @@ export async function fetchOnePost(slug: string): Promise<Post | null> {
         { slug },
         {
           cache: 'force-cache',
-          next: { revalidate: 60 },
-        },
-      )
+          next: { revalidate: 60 }
+        }
+      );
 
-    return post ? mapPost(post) : null
+    return post ? mapPost(post) : null;
   } catch (error) {
-    console.error('Failed to fetch post', error)
-    return null
+    console.error('Failed to fetch post', error);
+    return null;
   }
 }

@@ -1,15 +1,15 @@
-'use client'
-import { Home } from 'lucide-react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+'use client';
+import { Home } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export interface ErrorLayoutProps {
-  title: string
-  icon: React.ReactNode
-  subTitle?: string
-  description: string
-  error: React.ReactNode
-  children: React.ReactNode
+  title: string;
+  icon: React.ReactNode;
+  subTitle?: string;
+  description: string;
+  error: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export function ErrorLayout({
@@ -18,7 +18,7 @@ export function ErrorLayout({
   icon,
   description,
   error,
-  children,
+  children
 }: ErrorLayoutProps) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12">
@@ -37,9 +37,7 @@ export function ErrorLayout({
         </div>
 
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-primary">
-            {title}
-          </h1>
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-primary">{title}</h1>
           {/* <h2 className="text-xl font-medium text-foreground">{subTitle}</h2> */}
           <p className="text-muted-foreground">{description}</p>
         </div>
@@ -59,5 +57,5 @@ export function ErrorLayout({
         </div>
       </div>
     </div>
-  )
+  );
 }

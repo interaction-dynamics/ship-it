@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { ArrowLeft, Search } from 'lucide-react'
-import { ErrorLayout } from '@/components/error-layout'
-import { Button } from '@/components/ui/button'
+import { ArrowLeft, Search } from 'lucide-react';
+import { ErrorLayout } from '@/components/error-layout';
+import { Button } from '@/components/ui/button';
 
 export default function NotFound() {
   return (
@@ -25,5 +25,5 @@ export default function NotFound() {
         <span>Go Back</span>
       </Button>
     </ErrorLayout>
-  )
+  );
 }

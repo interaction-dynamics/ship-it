@@ -1,11 +1,11 @@
-import { defineConfig, devices } from '@playwright/test'
-import path from 'path'
+import { defineConfig, devices } from '@playwright/test';
+import path from 'path';
 
 // Use process.env.PORT by default and fallback to port 3000
-const PORT = process.env.PORT || 3030
+const PORT = process.env.PORT || 3030;
 
 // Set webServer.url and use.baseURL with the location of the WebServer respecting the correct set port
-const baseURL = `http://localhost:${PORT}`
+const baseURL = `http://localhost:${PORT}`;
 
 // Reference: https://playwright.dev/docs/test-configuration
 export default defineConfig({
@@ -24,7 +24,7 @@ export default defineConfig({
     command: `PORT=${PORT} pnpm dev`,
     url: baseURL,
     timeout: 120 * 1000,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: !process.env.CI
   },
 
   use: {
@@ -34,7 +34,7 @@ export default defineConfig({
 
     // Retry a test if its failing with enabled tracing. This allows you to analyse the DOM, console logs, network traffic etc.
     // More information: https://playwright.dev/docs/trace-viewer
-    trace: 'retry-with-trace',
+    trace: 'retry-with-trace'
 
     // All available context options: https://playwright.dev/docs/api/class-browser#browser-new-context
     // contextOptions: {
@@ -46,31 +46,31 @@ export default defineConfig({
     {
       name: 'Desktop Chrome',
       use: {
-        ...devices['Desktop Chrome'],
-      },
+        ...devices['Desktop Chrome']
+      }
     },
     {
       name: 'Desktop Firefox',
       use: {
-        ...devices['Desktop Firefox'],
-      },
+        ...devices['Desktop Firefox']
+      }
     },
     {
       name: 'Desktop Safari',
       use: {
-        ...devices['Desktop Safari'],
-      },
+        ...devices['Desktop Safari']
+      }
     },
     // Test against mobile viewports.
     {
       name: 'Mobile Chrome',
       use: {
-        ...devices['Pixel 5'],
-      },
-    },
+        ...devices['Pixel 5']
+      }
+    }
     // {
     //   name: 'Mobile Safari',
     //   use: devices['iPhone 12'],
     // },
-  ],
-})
+  ]
+});

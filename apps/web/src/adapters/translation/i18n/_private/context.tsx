@@ -1,31 +1,27 @@
-'use client'
-import { createContext, useMemo } from 'react'
-import type { Language } from '../../_types/language'
-import type { Messages } from '../../_types/messages'
-import type { Parameters } from '../../_types/parameters'
-import { findTranslation } from './findTranslation'
+'use client';
+import { createContext, useMemo } from 'react';
+import type { Language } from '../../_types/language';
+import type { Messages } from '../../_types/messages';
+import type { Parameters } from '../../_types/parameters';
+import { findTranslation } from './findTranslation';
 
 interface TranslationContextType {
-  locale: string
-  languages: Language[]
-  t: (
-    key: string,
-    parameters: Parameters,
-    namespace?: string,
-  ) => React.ReactNode
+  locale: string;
+  languages: Language[];
+  t: (key: string, parameters: Parameters, namespace?: string) => React.ReactNode;
 }
 
 export const TranslationContext = createContext<TranslationContextType>({
   locale: '',
   languages: [],
-  t: () => '',
-})
+  t: () => ''
+});
 
 interface TranslationProviderProps extends React.PropsWithChildren {
-  locale: string
-  languages: Language[]
-  messages: Messages
-  defaultNamespace: string
+  locale: string;
+  languages: Language[];
+  messages: Messages;
+  defaultNamespace: string;
 }
 
 export function TranslationProviderClient({
@@ -33,27 +29,18 @@ export function TranslationProviderClient({
   locale,
   messages,
   children,
-  defaultNamespace,
+  defaultNamespace
 }: TranslationProviderProps) {
   const value = useMemo(
     () => ({
       locale,
       languages,
-      t: (
-        key: string,
-        parameters: Parameters = {},
-        namespace?: string,
-      ): React.ReactNode => {
-        return findTranslation(
-          key,
-          messages,
-          namespace ?? defaultNamespace,
-          parameters,
-        )
-      },
+      t: (key: string, parameters: Parameters = {}, namespace?: string): React.ReactNode => {
+        return findTranslation(key, messages, namespace ?? defaultNamespace, parameters);
+      }
     }),
-    [messages, locale, languages, defaultNamespace],
-  )
+    [messages, locale, languages, defaultNamespace]
+  );
 
-  return <TranslationContext value={value}>{children}</TranslationContext>
+  return <TranslationContext value={value}>{children}</TranslationContext>;
 }

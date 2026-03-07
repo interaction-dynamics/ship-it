@@ -1,52 +1,49 @@
-import React from 'react'
-import type { Parameters } from '../../_types/parameters'
-import type { Translations } from '../../_types/translations'
+import React from 'react';
+import type { Parameters } from '../../_types/parameters';
+import type { Translations } from '../../_types/translations';
 
-const splitByArgs = (
-  str: string,
-  parameters: Parameters,
-): Array<string | { argName: string }> => {
-  let tempStr = str
+const splitByArgs = (str: string, parameters: Parameters): Array<string | { argName: string }> => {
+  let tempStr = str;
 
-  const array: Array<string | { argName: string }> = []
+  const array: Array<string | { argName: string }> = [];
 
   Object.keys(parameters).forEach((argName) => {
-    const key = `{{${argName}}}`
+    const key = `{{${argName}}}`;
 
-    const index = tempStr.indexOf(key)
+    const index = tempStr.indexOf(key);
 
-    if (index === -1) return
+    if (index === -1) return;
 
-    array.push(tempStr.substring(0, index))
-    array.push({ argName })
+    array.push(tempStr.substring(0, index));
+    array.push({ argName });
 
-    tempStr = tempStr.substring(index + key.length)
-  })
+    tempStr = tempStr.substring(index + key.length);
+  });
 
-  array.push(tempStr)
+  array.push(tempStr);
 
-  return array
-}
+  return array;
+};
 
 export const replaceArgs = (str: string, parameters: Parameters) => {
-  const split = splitByArgs(str, parameters)
+  const split = splitByArgs(str, parameters);
 
   const result = split.map((item) => {
     if (typeof item === 'string') {
-      return item
+      return item;
     }
 
-    const key = item.argName
+    const key = item.argName;
 
     if (key in parameters) {
-      return parameters[key]
+      return parameters[key];
     }
 
-    return ''
-  })
+    return '';
+  });
 
   if (Object.values(parameters).every((p) => typeof p === 'string')) {
-    return result.join('')
+    return result.join('');
   }
 
   return (
@@ -55,41 +52,37 @@ export const replaceArgs = (str: string, parameters: Parameters) => {
         <React.Fragment key={item?.toString()}>{item}</React.Fragment>
       ))}
     </>
-  )
-}
+  );
+};
 
 export const findTranslation = (
   key: string,
   messages: Translations,
   namespace: string,
-  parameters: Parameters = {},
+  parameters: Parameters = {}
 ): React.ReactNode | string => {
-  const keys = key.split('.')
+  const keys = key.split('.');
 
-  const translations = messages[namespace]
+  const translations = messages[namespace];
 
   try {
     const str = keys.reduce((acc: Translations | string, key: string) => {
-      if (typeof acc === 'string') return acc
+      if (typeof acc === 'string') return acc;
 
       if (acc === undefined) {
-        throw new Error(
-          `Impossible to find translation ${key} in namespace ${namespace}`,
-        )
+        throw new Error(`Impossible to find translation ${key} in namespace ${namespace}`);
       }
 
       if (!(key in acc)) {
-        throw new Error(
-          `Impossible to find translation ${key} in namespace ${namespace}`,
-        )
+        throw new Error(`Impossible to find translation ${key} in namespace ${namespace}`);
       }
 
-      return acc[key]
-    }, translations) as string
+      return acc[key];
+    }, translations) as string;
 
-    return replaceArgs(str, parameters)
+    return replaceArgs(str, parameters);
   } catch (error) {
-    console.error(error)
-    return key
+    console.error(error);
+    return key;
   }
-}
+};

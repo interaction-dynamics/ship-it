@@ -1,17 +1,17 @@
 export const authMiddleware = () => null;
 
 export function SignedIn({ children }: React.PropsWithChildren) {
-	return <>{children}</>;
+  return <>{children}</>;
 }
 
 export function SignedOut({ children }: React.PropsWithChildren) {
-	return <>{children}</>;
+  return <>{children}</>;
 }
 
 export function RedirectToSignIn() {
-	return null;
+  return null;
 }
 
 export function AuthenticationProvider({ children }: React.PropsWithChildren) {
-	return <>{children}</>;
+  return <>{children}</>;
 }

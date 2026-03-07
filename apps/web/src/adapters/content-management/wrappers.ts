@@ -1,3 +1,3 @@
-import { wrappers as markdownWrappers } from './markdown'
+import { wrappers as markdownWrappers } from './markdown';
 
-export const wrappers = [...markdownWrappers]
+export const wrappers = [...markdownWrappers];

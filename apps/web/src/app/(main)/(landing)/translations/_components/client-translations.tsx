@@ -1,10 +1,8 @@
-"use client";
-import { useTranslations } from "@/adapters/translation";
+'use client';
+import { useTranslations } from '@/adapters/translation';
 
 export function ClientTranslations() {
-	const { t } = useTranslations("landing");
+  const { t } = useTranslations('landing');
 
-	return (
-		<div className="pt-10">{t("description", { framework: "Next.js" })}</div>
-	);
+  return <div className="pt-10">{t('description', { framework: 'Next.js' })}</div>;
 }

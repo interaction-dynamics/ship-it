@@ -1,12 +1,20 @@
 {
-  "file_scan_exclusions": [
-    ".vercel",
-    ".next",
-    "node_modules",
-    "test-results",
-    "next-env.d.ts",
-    ".swc",
-    ".git",
-    ".turbo"
-  ]
+	"file_scan_exclusions": [
+		".vercel",
+		".next",
+		"node_modules",
+		"test-results",
+		"next-env.d.ts",
+		".swc",
+		".git",
+		".turbo"
+	],
+	"languages": {
+		"JavaScript": { "formatter": { "language_server": { "name": "oxfmt" } } },
+		"TypeScript": { "formatter": { "language_server": { "name": "oxfmt" } } },
+		"TSX": { "formatter": { "language_server": { "name": "oxfmt" } } },
+		"JSON": { "formatter": { "language_server": { "name": "oxfmt" } } },
+		"JSONC": { "formatter": { "language_server": { "name": "oxfmt" } } },
+		"CSS": { "formatter": { "language_server": { "name": "oxfmt" } } }
+	}
 }

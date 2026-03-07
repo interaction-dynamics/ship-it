@@ -9,23 +9,21 @@ import {
   Lock,
   type LucideProps,
   Mail,
-  Sun,
-} from 'lucide-react'
-import type { ForwardRefExoticComponent, RefAttributes } from 'react'
-import { DarkModeToggle } from '@/components/dark-mode-toggle'
-import { LanguageSelector } from '@/components/language-selector'
-import { Button } from '@/components/ui/button'
-import { WobbleCard } from '@/components/ui/wobble-card'
+  Sun
+} from 'lucide-react';
+import type { ForwardRefExoticComponent, RefAttributes } from 'react';
+import { DarkModeToggle } from '@/components/dark-mode-toggle';
+import { LanguageSelector } from '@/components/language-selector';
+import { Button } from '@/components/ui/button';
+import { WobbleCard } from '@/components/ui/wobble-card';
 
 interface CardProps {
-  containerClassName?: string
-  icon?: ForwardRefExoticComponent<
-    Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>
-  >
-  className?: string
-  title: React.ReactNode
-  description: React.ReactNode
-  children?: React.ReactNode
+  containerClassName?: string;
+  icon?: ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>>;
+  className?: string;
+  title: React.ReactNode;
+  description: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 function Card({
@@ -34,7 +32,7 @@ function Card({
   title,
   icon: Icon,
   description,
-  children,
+  children
 }: CardProps) {
   return (
     <WobbleCard containerClassName={containerClassName} className="">
@@ -43,13 +41,11 @@ function Card({
           {Icon && <Icon className="h-8 w-8 mr-2" />}
           {title}
         </h3>
-        <p className="mt-4 text-left  text-base/6 text-neutral-200">
-          {description}
-        </p>
+        <p className="mt-4 text-left  text-base/6 text-neutral-200">{description}</p>
       </div>
       {children}
     </WobbleCard>
-  )
+  );
 }
 
 export function Features() {
@@ -60,8 +56,8 @@ export function Features() {
           Everything You Need, Built-In
         </h2>
         <p className="text-xl text-muted-foreground  max-w-3xl mx-auto">
-          Stop wasting time on boilerplate code. Focus on what matters -
-          building your unique features.
+          Stop wasting time on boilerplate code. Focus on what matters - building your unique
+          features.
         </p>
         <div className="max-w-7xl m-auto mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4">
           <Card
@@ -153,5 +149,5 @@ export function Features() {
         </div>
       </div>
     </div>
-  )
+  );
 }

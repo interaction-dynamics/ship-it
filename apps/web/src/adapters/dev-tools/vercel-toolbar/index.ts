@@ -1,5 +1,5 @@
-import WithVercelToolbar from '@vercel/toolbar/plugins/next'
+import WithVercelToolbar from '@vercel/toolbar/plugins/next';
 
-const withVercelToolbar = WithVercelToolbar()
+const withVercelToolbar = WithVercelToolbar();
 
-export const wrappers = [withVercelToolbar]
+export const wrappers = [withVercelToolbar];

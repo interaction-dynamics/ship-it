@@ -1,6 +1,6 @@
-import type { MDXComponents } from 'mdx/types'
-import Image, { type ImageProps } from 'next/image'
-import { Typography } from '@/components/typography'
+import type { MDXComponents } from 'mdx/types';
+import Image, { type ImageProps } from 'next/image';
+import { Typography } from '@/components/typography';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -16,6 +16,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         alt=""
       />
     ),
-    ...components,
-  }
+    ...components
+  };
 }

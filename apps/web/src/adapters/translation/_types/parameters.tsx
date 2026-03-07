@@ -1,1 +1,1 @@
-export type Parameters = Record<string, string | React.ReactNode>
+export type Parameters = Record<string, string | React.ReactNode>;

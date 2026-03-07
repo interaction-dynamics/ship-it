@@ -1,12 +1,12 @@
-import { Terminal } from 'lucide-react'
-import { DarkModeToggle } from '@/components/dark-mode-toggle'
-import { LanguageSelector } from '@/components/language-selector'
-import { Footer } from '@/components/sitemap-footer'
-import { Button } from '@/components/ui/button'
-import { getRepositoryUrl } from '@/config/repository'
+import { Terminal } from 'lucide-react';
+import { DarkModeToggle } from '@/components/dark-mode-toggle';
+import { LanguageSelector } from '@/components/language-selector';
+import { Footer } from '@/components/sitemap-footer';
+import { Button } from '@/components/ui/button';
+import { getRepositoryUrl } from '@/config/repository';
 
 interface MainLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 function Header() {
@@ -54,7 +54,7 @@ function Header() {
         </SignedIn> */}
       </div>
     </header>
-  )
+  );
 }
 
 export default function MainLayout({ children }: MainLayoutProps) {
@@ -64,5 +64,5 @@ export default function MainLayout({ children }: MainLayoutProps) {
       <div className="flex-1">{children}</div>
       <Footer />
     </div>
-  )
+  );
 }

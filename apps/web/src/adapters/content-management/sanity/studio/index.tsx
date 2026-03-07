@@ -10,19 +10,19 @@
  * and it crashes the page
  */
 
-import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from 'next';
 import {
-	NextStudio,
-	metadata as sanityMetadata,
-	viewport as sanityViewport,
-} from "next-sanity/studio";
-import config from "./sanity.config";
+  NextStudio,
+  metadata as sanityMetadata,
+  viewport as sanityViewport
+} from 'next-sanity/studio';
+import config from './sanity.config';
 
-export const dynamic = "force-static";
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = sanityMetadata;
 export const viewport: Viewport = sanityViewport as Viewport;
 
 export function Studio() {
-	return <NextStudio config={config} />;
+  return <NextStudio config={config} />;
 }

@@ -1,16 +1,13 @@
-import { useTranslations } from "@/adapters/translation";
-import {
-	type DateFormatShortOption,
-	formatDatetimeInternal,
-} from "./format-datetime";
+import { useTranslations } from '@/adapters/translation';
+import { type DateFormatShortOption, formatDatetimeInternal } from './format-datetime';
 
 export function useDatetime() {
-	const { locale } = useTranslations();
+  const { locale } = useTranslations();
 
-	return {
-		formatDatetime: (
-			date: string | Date,
-			options: Intl.DateTimeFormatOptions | DateFormatShortOption = "standard",
-		) => formatDatetimeInternal(date, options, locale),
-	};
+  return {
+    formatDatetime: (
+      date: string | Date,
+      options: Intl.DateTimeFormatOptions | DateFormatShortOption = 'standard'
+    ) => formatDatetimeInternal(date, options, locale)
+  };
 }

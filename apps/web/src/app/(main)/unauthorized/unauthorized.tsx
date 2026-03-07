@@ -1,7 +1,7 @@
-import { LogIn, UserX } from 'lucide-react'
-import Link from 'next/link'
-import { ErrorLayout } from '@/components/error-layout'
-import { Button } from '@/components/ui/button'
+import { LogIn, UserX } from 'lucide-react';
+import Link from 'next/link';
+import { ErrorLayout } from '@/components/error-layout';
+import { Button } from '@/components/ui/button';
 
 export default function UnauthorizedError() {
   return (
@@ -21,5 +21,5 @@ export default function UnauthorizedError() {
         </Link>
       </Button>
     </ErrorLayout>
-  )
+  );
 }

@@ -1,1 +1,1 @@
-export * from './google-provider'
+export * from './google-provider';
