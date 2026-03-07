@@ -2,10 +2,10 @@
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 import { cookies, headers } from 'next/headers';
+import { translationConfig } from '../../../config/translations.config';
 import type { Parameters } from '../_types/parameters';
 import { TranslationProviderClient } from './_private/context';
 import { findTranslation } from './_private/findTranslation';
-import { translationConfig } from './translations.config';
 
 const NEXT_LOCALE = 'next_locale';
 

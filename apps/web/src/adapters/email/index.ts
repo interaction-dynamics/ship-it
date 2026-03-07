@@ -10,4 +10,4 @@ export const getProvider = async (): Promise<EmailProvider> => {
 
 const provider = await getProvider();
 
-export const sendEmail = provider.sendEmail;
+export const { sendEmail } = provider;

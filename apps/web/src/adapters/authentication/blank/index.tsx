@@ -1,4 +1,6 @@
-export const authMiddleware = () => null;
+import type { NextProxy } from 'next/server';
+
+export const authMiddleware = (): NextProxy => () => null;
 
 export function SignedIn({ children }: React.PropsWithChildren) {
   return <>{children}</>;

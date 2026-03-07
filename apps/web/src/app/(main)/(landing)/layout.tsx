@@ -3,19 +3,24 @@ import { DarkModeToggle } from '@/components/dark-mode-toggle';
 import { LanguageSelector } from '@/components/language-selector';
 import { Footer } from '@/components/sitemap-footer';
 import { Button } from '@/components/ui/button';
+import { hideLogoLocal, hideLogoPostHog, hideLogoVercel } from '@/config/flags';
 import { getRepositoryUrl } from '@/config/repository';
 
 interface MainLayoutProps {
   children: React.ReactNode;
 }
 
-function Header() {
+async function Header() {
+  const hideLogo = (await hideLogoLocal()) || (await hideLogoVercel()) || (await hideLogoPostHog());
+
   return (
     <header className="flex flex-row justify-between items-stretch gap-4 p-4 top-0">
       <div className="flex flex-row items-center text-xl font-bold space-x-2">
-        <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-          <Terminal className="w-4 h-4 text-black" />
-        </div>
+        {hideLogo ? null : (
+          <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+            <Terminal className="w-4 h-4 text-black" />
+          </div>
+        )}
         <span className="text-xl font-bold text-foreground">Ship It</span>
       </div>
       <div className="flex flex-row items-center gap-4">
