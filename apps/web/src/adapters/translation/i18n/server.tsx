@@ -53,7 +53,7 @@ export async function changeLocale(locale: string) {
 export async function getMessages(locale: string) {
 	const promises = namespaces.map(async (namespace) => [
 		namespace,
-		(await import(`../../../content/translations/${locale}/${namespace}.json`))
+		(await import(`../../../../content/messages/${locale}/${namespace}.json`))
 			.default,
 	]);
 
