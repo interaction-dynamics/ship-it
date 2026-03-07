@@ -47,7 +47,7 @@ export function CheckoutForm({ plans }: CheckoutFormProps) {
 				<div key={plan.id}>
 					<h2>{renderProduct(plan.product)}</h2>
 					<p>
-						Price: ${plan.price ?? 0 / 100} / {plan.interval}
+						Price: ${(plan.price ?? 0) / 100} / {plan.interval}
 					</p>
 					<Button onClick={() => handleSubmit(plan.price_id)}>Subscribe</Button>
 				</div>
