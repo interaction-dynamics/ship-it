@@ -3,7 +3,7 @@ import { DarkModeToggle } from '@/components/dark-mode-toggle';
 import { LanguageSelector } from '@/components/language-selector';
 import { Footer } from '@/components/sitemap-footer';
 import { Button } from '@/components/ui/button';
-import { hideLogoLocal, hideLogoPostHog, hideLogoVercel } from '@/config/flags';
+import { hideLogoLocal, hideLogoPostHog, hideLogoStatsig, hideLogoVercel } from '@/config/flags';
 import { getRepositoryUrl } from '@/config/repository';
 
 interface MainLayoutProps {
@@ -11,7 +11,11 @@ interface MainLayoutProps {
 }
 
 async function Header() {
-  const hideLogo = (await hideLogoLocal()) || (await hideLogoVercel()) || (await hideLogoPostHog());
+  const hideLogo =
+    (await hideLogoLocal()) ||
+    (await hideLogoVercel()) ||
+    (await hideLogoPostHog()) ||
+    (await hideLogoStatsig());
 
   return (
     <header className="flex flex-row justify-between items-stretch gap-4 p-4 top-0">
