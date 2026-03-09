@@ -10,7 +10,7 @@ export default async function FaqPage() {
   const { locale, t } = await getTranslations('faq');
 
   const { faq }: { faq: Array<{ question: string; answer: string }> } = await import(
-    `../../../messages/faq/faq.${locale}.json`
+    `../../../content/json/faq.${locale}.json`
   );
 
   return (

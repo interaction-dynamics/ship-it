@@ -38,25 +38,26 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Next.js](https://nextjs.org/)
 - Tailwind
 - Typescript
-- Jest
+- Vitest
 - React Testing Library
-- Eslint
-- Prettier
+- Oxlint
+- Oxfmt
 - Playwright (including accessibility tests)
 - Commitlint
 - Github Actions
 - Dark mode
 - Custom Translation system
-- Simple Git Hooks
+- Lefthook
 - [shadcn/ui](https://ui.shadcn.com/)
 - Stripe
 - Google Analytics
 - Hotjar
 - Markdown support
 - Sanity
-- Mailgun
+- [Mailgun](https://www.mailgun.com/) OR [Resend](https://resend.com) with [React.Email](https://react.email)
 - Clerk
 - Custom Error pages
 - Localized date and time formatting
 - Dark mode toggle
 - Language selector
+- PostHog OR Vercel flags OR Statsig

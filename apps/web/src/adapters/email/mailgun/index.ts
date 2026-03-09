@@ -21,12 +21,9 @@ const client = () => {
   return mg;
 };
 
-export async function sendEmail(email: Email) {
-  return client()
-    .messages.create(process.env.MAILGUN_DOMAIN ?? '', {
-      from: `Mailgun Sandbox <postmaster@${process.env.MAILGUN_DOMAIN}>`,
-      ...email
-    })
-    .then((msg) => console.log(msg)) // logs response data
-    .catch((err) => console.error(err)); // logs any error
+export async function sendEmail(email: Email): Promise<void> {
+  client().messages.create(process.env.MAILGUN_DOMAIN ?? '', {
+    from: `Mailgun Sandbox <postmaster@${process.env.MAILGUN_DOMAIN}>`,
+    ...email
+  });
 }
