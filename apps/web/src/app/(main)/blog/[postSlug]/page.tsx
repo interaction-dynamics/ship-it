@@ -1,8 +1,7 @@
-import { PortableText } from '@portabletext/react';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { fetchOnePost } from '@/adapters/content-management/client';
+import { fetchOnePost, RichText } from '@/adapters/content-management/client';
 import { Typography } from '@/components/typography';
 import { Button } from '@/components/ui/button';
 
@@ -28,7 +27,7 @@ export default async function OneBlogPage({ params }: OneBlogPageProps) {
       <Typography variant="h1" className="mb-3">
         {post?.title}
       </Typography>
-      <PortableText value={post?.content} />
+      <RichText content={post?.content} />
     </>
   );
 }

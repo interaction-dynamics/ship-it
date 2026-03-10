@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@payload-config": ["./src/adapters/content-management/payload/payload.config.ts"]
     }
   },
   "include": [
