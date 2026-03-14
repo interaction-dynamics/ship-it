@@ -5,7 +5,7 @@ export default async function LegalPage() {
 
   // you need to use relative imports for dynamic imports with a variable
   const { default: TermsOfService } = await import(
-    `../../../../content/markdown/${locale}/terms-of-service.mdx`
+    `../../../content/markdown/${locale}/terms-of-service.mdx`
   );
 
   return (

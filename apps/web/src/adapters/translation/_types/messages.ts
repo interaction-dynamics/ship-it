@@ -1,4 +1,4 @@
-import type { translationConfig } from '../i18n/translations.config';
+import type { translationConfig } from '../../../config/translations.config';
 import type { Translations } from './translations';
 
 export interface Messages {
