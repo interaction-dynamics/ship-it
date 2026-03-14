@@ -22,15 +22,7 @@ pnpm install
 pnpm dev
 ```
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
-
-## Ackowledgements
+## Libraries
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -61,3 +53,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Dark mode toggle
 - Language selector
 - PostHog OR Vercel flags OR Statsig
+
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
