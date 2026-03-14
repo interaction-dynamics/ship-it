@@ -6,9 +6,9 @@ vi.mock('@/adapters/translation', () => ({
     locale: 'en',
     languages: [],
     t: (key: string) => key,
-    changeLocale: vi.fn(),
+    changeLocale: vi.fn()
   }),
-  changeLocale: vi.fn(),
+  changeLocale: vi.fn()
 }));
 
 describe('LanguageSelector', () => {
